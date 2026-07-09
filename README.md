@@ -102,16 +102,3 @@ curl -X POST http://127.0.0.1:8765/api/scans \
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
-
-## Releases
-
-Releases are handled by GitHub Actions with Python Semantic Release. After a
-push to `main`, the release workflow runs the test suite, determines the next
-version from Conventional Commit subjects, updates `pyproject.toml`, tags the
-release, creates a GitHub Release, and uploads the built distributions.
-
-Use these commit subject prefixes for release-worthy changes:
-
-- `fix:` for patch releases.
-- `feat:` for minor releases.
-- `feat!:` or a `BREAKING CHANGE:` footer for major releases.
