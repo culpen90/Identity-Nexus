@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "identity-nexus"
+version = "0.1.0"
+description = "Authorized reverse email and phone lookup service that orchestrates OSINT tools."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Unlicense" }
+authors = [{ name = "Identity Nexus contributors" }]
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.27.0",
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+identity-nexus = "identity_nexus.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
